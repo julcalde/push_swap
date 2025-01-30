@@ -1,14 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/01/30 18:02:43 by julcalde         ###   ########.fr       */
+/*   Created: 2025/01/23 18:19:54 by julcalde          #+#    #+#             */
+/*   Updated: 2025/01/30 17:56:44 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+/* Allowed operations:
+	Swap
+	Push
+	Rotate
+	Reerse rotate
+*/
 
