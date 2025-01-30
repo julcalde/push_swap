@@ -6,14 +6,14 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/01/30 17:56:25 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:42:31 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
