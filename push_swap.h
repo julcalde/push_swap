@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/01/30 19:52:27 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/03 22:15:20 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,35 @@
 
 typedef struct s_stack
 {
-	int				value;		// number to be sorted
-	int				index;		// index in the list of all values before sort
-	int				pos;		// current position in either stacks
-	int				target_pos;	// target pos in stack A of num in stack B
-	int				cost_a;		// cost for num in stack A to reach stack's top
-	int				cost_b;		// cost for num in stack B to reach stack's top
-	struct s_stack	*next;		// pointer to the next element in the list
+	int				value;
+	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
 }	t_stack;
 
-int		stack_size(t_stack *stack);
-void	push(t_stack **this_node, t_stack *on_top);
-t_stack	*last_node(t_stack *stack);
-void	add_bottom(t_stack **stack, t_stack *node);
+// s_list functions to add to libft_updated
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+
+t_list		*ft_lstlast(t_list *lst);
+void		ft_add_back(t_list **lst, t_list *new);
+
+// split_args.c
+t_stack		*check_args(int argc, char **argv);
+t_stack		*split_args(char **argv);
+t_stack		*create_numnode(int num);
+void		free_str(char **lst);
+
+// utility_ft0.c
+int			ft_stoi(const char *str);
+int			ft_is_space(int x);
+void		perror_msg(char *str);
 
 
 #endif
