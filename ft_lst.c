@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:55:11 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/03 21:31:20 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:19:55 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,19 @@ void	ft_add_back(t_list **lst, t_list *new)
 	}
 }
 
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
 // t_list	*ft_lstnew(void *content)
 // {
 // 	t_list	*lst;
@@ -54,19 +67,6 @@ void	ft_add_back(t_list **lst, t_list *new)
 // 	lst->content = content;
 // 	lst->next = NULL;
 // 	return (lst);
-// }
-
-// int	ft_lstsize(t_list *lst)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (lst)
-// 	{
-// 		lst = lst->next;
-// 		i++;
-// 	}
-// 	return (i);
 // }
 
 // void	ft_add_front(t_list **lst, t_list *new)

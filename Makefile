@@ -24,7 +24,7 @@ CYAN = \033[36m
 NC = \033[0m
 CLEAR_LINE = \033[2K\r
 
-SRCS =			push_swap.c commands.c
+SRCS =			push_swap.c split_args.c utility_ft0.c ft_lst.c i_see_double.c sorting.c commands.c
 
 # Object files
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))

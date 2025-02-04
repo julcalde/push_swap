@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/04 19:16:53 by julcalde         ###   ########.fr       */
+/*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
+/*   Updated: 2025/02/04 19:22:04 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	check_sorted(t_stack *stack)
 {
-	t_stack	*a;
+	int	i;
 
-	a = check_args(argc, argv);
-	if (!a || check_dupes(a))
+	i = stack->value;
+	while (stack)
 	{
-		free_stack(&a);
-		perror_msg("Duplicates not allowed\n");
+		if (i > stack->value)
+			return (0);
+		i = stack->value;
+		stack = stack->next;
 	}
-	if (!check_sorted(a))
-	{
-		sorting(&a); //sort function to be written
-	}
-	free_stack(&a);
-	return (0);
+	return (1);
+}
+
+void	sorting(t_stack **a)
+{
+	t_stack	*b;
+	int		i;
+
+	b = NULL;
+	if (ft_lstsize(*a) == 2)
+	else if (ft_lstsize(*a) == 3)
+	else if (ft_lstsize(*a) <= 5)
+	else if (ft_lstsize(*a) > 5)
+
 }

@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 22:04:34 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/03 22:12:30 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:50:31 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack	*split_args(char **argv)
 	tmp = ft_split(argv[1], ' ');
 	while (tmp[i])
 	{
-		j = ft_stoi(argv[i]);
+		j = ft_stol(argv[i]);
 		ft_add_back(&a, create_numnode(j));
 		i++;
 	}
@@ -76,9 +76,10 @@ t_stack	*check_args(int argc, char **argv)
 	{
 		while (1 < argc)
 		{
-			j = ft_stoi(argv[i]);
+			j = ft_stol(argv[i]);
 			ft_add_back(&a, create_numnode(j));
 			i++;
 		}
 	}
+	return (a);
 }

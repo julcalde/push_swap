@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/03 22:10:34 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:15:11 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_is_space(int x)
 		return (0);
 }
 
-int	ft_stoi(const char *str)
+int	ft_stol(const char *str)
 {
 	int				sig;
 	long long int	i;
@@ -47,11 +47,28 @@ int	ft_stoi(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			perror_msg("Only use digits\n");
+			perror_msg("Please use digits only.\n");
 		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((sig * i > INT_MAX) || (sig * i < INT_MIN))
+	if ((sig * i > 2147483647) || (sig * i < -2147483648))
 		perror_msg("Numbers allowed only between -2147483648 and 2147483647");
 	return (sig * i);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+	{
+		return ();
+		while (*stack)
+		{
+			tmp = (*stack)->next;
+			(*stack)->value = 0;
+			free(*stack);
+			*stack = tmp;
+		}
+	}
 }
