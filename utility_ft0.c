@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/04 18:15:11 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:53:32 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,6 @@ void	perror_msg(char *str)
 	write (2, "Error\n", 6);
 	ft_printf(str);
 	exit(1);
-}
-
-int	ft_is_space(int x)
-{
-	if (x == ' ' || x == '\t' || x == '\n' || x == '\v' || x == '\r' || \
-	x == '\f')
-		return (1);
-	else
-		return (0);
 }
 
 int	ft_stol(const char *str)

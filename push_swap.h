@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/04 19:20:11 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:43:40 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,6 @@ typedef struct s_stack
 	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
-
-// s_list functions to add to libft_updated
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-t_list		*ft_lstlast(t_list *lst);
-void		ft_add_back(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
 
 // split_args.c
 t_stack		*check_args(int argc, char **argv);
