@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:26:00 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:42:14 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,17 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-// void	ft_stackadd_back(t_stack **lst, t_stack *new)
-// {
-// 	t_stack	*tmp;
+int	ft_stacksize(t_stack *stack)
+{
+	int		size;
+	t_stack	*tmp;
 
-// 	if (lst)
-// 	{
-// 		if (*lst == NULL)
-// 		{
-// 			*lst = new;
-// 		}
-// 		else
-// 		{
-// 			tmp = ft_lstlast(*(lst));
-// 			tmp->next = new;
-// 		}
-// 	}
-// }
-
+	tmp = stack;
+	size = 1;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+		size++;
+	}
+	return (size);
+}

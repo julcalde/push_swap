@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:59:53 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:55:58 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
+	// int				index;
+	// int				pos;
+	// int				target_pos;
+	// int				cost_a;
+	// int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -54,14 +54,14 @@ int			rev_rotate_both(t_stack **a, t_stack **b);
 // split_args.c
 t_stack		*check_args(int argc, char **argv);
 t_stack		*split_args(char **argv);
-t_stack		*create_numnode(int num);
+// t_stack		*create_numnode(int num);
 void		free_str(char **lst);
 
 // utility_ft0.c
 int			ft_stol(const char *str);
-int			ft_is_space(int x);
 void		perror_msg(char *str);
 void		free_stack(t_stack **stack);
+int			ft_stacksize(t_stack *stack);
 
 // i_see_double.c
 int			check_dupes(t_stack *stack);

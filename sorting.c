@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:29:01 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:52:31 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ int	check_sorted(t_stack *stack)
 	}
 	return (ft_printf("Stack already sorted\n"), 1);
 }
-
-// void	sorting(t_stack **a)
-// {
-// 	t_stack	*b;
-// 	int		i;
-
-// 	b = NULL;
-// 	if (ft_lstsize(*a) == 2)
-// 	else if (ft_lstsize(*a) == 3)
-// 	else if (ft_lstsize(*a) <= 5)
-// 	else if (ft_lstsize(*a) > 5)
-
-// }
 
 t_stack	*copy_a(t_stack *a)
 {
@@ -113,4 +100,19 @@ t_stack	*indexing(t_stack *st1, t_stack *st2)
 	}
 	st2 = tmp2;
 	return (st2);
+}
+
+void	sorting(t_stack **a)
+{
+	t_stack	*b;
+
+	b = NULL;
+	if (ft_stacksize(*a) == 2)
+		rotate(a);
+	else if (ft_stacksize(*a) == 3)
+		sort_3(a);
+	else if (ft_stacksize(*a) <= 5)
+		sort_5(a, b);
+	else if (ft_stacksize(*a) > 5)
+		sayajin_sort(a, b);
 }
