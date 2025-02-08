@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/04 19:22:04 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 17:46:18 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_sorted(t_stack *stack)
 		i = stack->value;
 		stack = stack->next;
 	}
-	return (1);
+	return (ft_printf("Stack already sorted\n"), 1);
 }
 
 void	sorting(t_stack **a)
