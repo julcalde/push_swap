@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 17:45:09 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:18:18 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	t_stack	*tmpa;
 
+	tmpa = NULL;
 	a = check_args(argc, argv);
 	if (!a || check_dupes(a))
 	{
@@ -26,7 +27,10 @@ int	main(int argc, char **argv)
 	}
 	if (!check_sorted(a))
 	{
-		sorting(&a); //sort function to be written
+		tmpa = copy_sort(a);
+		tmpa = sort_copy(tmpa);
+		a = indexing(a, tmpa);
+		sorting(&a, &b);
 	}
 	free_stack(&a);
 	return (0);

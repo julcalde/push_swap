@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 18:36:57 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:52:00 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,26 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-// commands*.c
-int			swap_a(t_stack *a);
-int			swap_b(t_stack *b);
+// push.c
 int			push_a(t_stack **a, t_stack **b);
 int			push_b(t_stack **a, t_stack **b);
+
+// swap.c
+int			swap_a(t_stack *a);
+int			swap_b(t_stack *b);
+int			swap(t_stack *stack);
+int			swap_both(t_stack *a, t_stack *b);
+
+// rotate.c
 int			rotate_a(t_stack **a);
 int			rotate_b(t_stack **b);
+int			rotate(t_stack **stack);
+int			rotate_both(t_stack **a, t_stack **b);
+
+// rev_rotate.c
 int			rev_rotate_a(t_stack **a);
 int			rev_rotate_b(t_stack **b);
-int			swap_both(t_stack *a, t_stack *b);
-int			rotate_both(t_stack **a, t_stack **b);
+int			rev_rotate(t_stack **stack);
 int			rev_rotate_both(t_stack **a, t_stack **b);
 
 // split_args.c
@@ -59,5 +68,9 @@ int			check_dupes(t_stack *stack);
 
 // sorting.c
 int			check_sorted(t_stack *stack);
+t_stack		*copy_a(t_stack *a);
+t_stack		*sort_copy(t_stack *tmpa);
+t_stack		*indexing(t_stack *st1, t_stack *st2);
+void		sorting(t_stack **a);
 
 #endif

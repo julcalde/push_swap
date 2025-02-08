@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands.c                                         :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 18:19:54 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 18:29:46 by julcalde         ###   ########.fr       */
+/*   Created: 2025/02/08 19:32:05 by julcalde          #+#    #+#             */
+/*   Updated: 2025/02/08 19:34:30 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* Allowed operations:
-	Swap
-	Push
-*/
 
 int	swap_a(t_stack *a)
 {
@@ -28,7 +23,7 @@ int	swap_a(t_stack *a)
 		a->next->value = tmp;
 	}
 	write (1, "sa\n", 3);
-	return (a);
+	return (0);
 }
 
 int	swap_b(t_stack *b)
@@ -42,39 +37,26 @@ int	swap_b(t_stack *b)
 		b->next->value = tmp;
 	}
 	write (1, "sb\n", 3);
-	return (b);
-}
-
-int	push_a(t_stack **a, t_stack **b)
-{
-	t_stack	*tmp1;
-	t_stack	*tmp2;
-
-	if (!*b)
-	{
-		tmp1 = *b;
-		tmp2 = *a;
-		*a = tmp1;
-		*b = tmp1->next;
-		tmp1->next = tmp2;
-	}
-	write (1, "pa\n", 3);
 	return (0);
 }
 
-int	push_b(t_stack **a, t_stack **b)
+int	swap(t_stack *stack)
 {
-	t_stack	*tmp1;
-	t_stack	*tmp2;
+	int	tmp;
 
-	if (!*a)
+	if (stack && stack->next)
 	{
-		tmp1 = *a;
-		tmp2 = *b;
-		*b = tmp1;
-		*a = tmp1->next;
-		tmp1->next = tmp2;
+		tmp = stack->value;
+		stack->value = stack->next->value;
+		stack->next->value = tmp;
 	}
-	write (1, "pb\n", 3);
+	return (0);
+}
+
+int	swap_both(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+	write(1, "ss\n", 4);
 	return (0);
 }

@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands2.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 18:26:45 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 18:35:52 by julcalde         ###   ########.fr       */
+/*   Created: 2025/02/08 19:35:37 by julcalde          #+#    #+#             */
+/*   Updated: 2025/02/08 19:44:59 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-	commands both ways
-*/
-
-int	swap_both(t_stack *a, t_stack *b)
+int	push_a(t_stack **a, t_stack **b)
 {
-	swap_a(a);
-	swap_b(b);
+	t_stack	*tmp1;
+	t_stack	*tmp2;
+
+	if (!*b)
+	{
+		tmp1 = *b;
+		tmp2 = *a;
+		*a = tmp1;
+		*b = tmp1->next;
+		tmp1->next = tmp2;
+	}
+	write (1, "pa\n", 3);
 	return (0);
 }
 
-int	rotate_both(t_stack **a, t_stack **b)
+int	push_b(t_stack **a, t_stack **b)
 {
-	rotate_a(a);
-	rotate_b(b);
-	return (0);
-}
+	t_stack	*tmp1;
+	t_stack	*tmp2;
 
-int	rev_rotate_both(t_stack **a, t_stack **b)
-{
-	rev_rotate_a(a);
-	rev_rotate_b(b);
+	if (!*a)
+	{
+		tmp1 = *a;
+		tmp2 = *b;
+		*b = tmp1;
+		*a = tmp1->next;
+		tmp1->next = tmp2;
+	}
+	write (1, "pb\n", 3);
 	return (0);
 }
