@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 18:19:54 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 17:56:53 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:29:46 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	swap_a(t_stack *a)
 	return (a);
 }
 
-int	swap_a(t_stack *b)
+int	swap_b(t_stack *b)
 {
 	int	tmp;
 

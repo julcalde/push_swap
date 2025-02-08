@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:57:13 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 18:15:04 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:30:31 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	Reerse rotate
 */
 
-int	rotate_a(t_stack **a)
+int	rotate_a(t_stack	**a)
 {
 	t_stack	*node_top;
 	t_stack	*node_bot;

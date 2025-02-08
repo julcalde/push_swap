@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/06 16:43:40 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:36:57 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ typedef struct s_stack
 	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
+
+// commands*.c
+int			swap_a(t_stack *a);
+int			swap_b(t_stack *b);
+int			push_a(t_stack **a, t_stack **b);
+int			push_b(t_stack **a, t_stack **b);
+int			rotate_a(t_stack **a);
+int			rotate_b(t_stack **b);
+int			rev_rotate_a(t_stack **a);
+int			rev_rotate_b(t_stack **b);
+int			swap_both(t_stack *a, t_stack *b);
+int			rotate_both(t_stack **a, t_stack **b);
+int			rev_rotate_both(t_stack **a, t_stack **b);
 
 // split_args.c
 t_stack		*check_args(int argc, char **argv);
