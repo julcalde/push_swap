@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:04:36 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/04 18:21:46 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:27:02 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	check_dupes(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	while (a)
+	while (stack)
 	{
-		tmp = a->next;
+		tmp = stack->next;
 		while (tmp)
 		{
-			if (a->value == tmp->value)
+			if (stack->value == tmp->value)
 				return (1);
 			else
 				tmp = tmp->next;
 		}
-		a = a->next;
+		stack = stack->next;
 	}
 	return (0);
 }

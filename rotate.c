@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:31 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:49:26 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:29:15 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	rotate(t_stack **stack)
 	return (0);
 }
 
-int	rotate_both(t_stack **a, t_Stack **b)
+int	rotate_both(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);

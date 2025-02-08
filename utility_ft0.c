@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/06 16:53:32 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:26:00 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_stol(const char *str)
 
 	i = 0;
 	sig = 1;
-	while (ft_is_space(*str))
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-')
 	{
@@ -53,13 +53,32 @@ void	free_stack(t_stack **stack)
 
 	if (!stack)
 	{
-		return ();
-		while (*stack)
-		{
-			tmp = (*stack)->next;
-			(*stack)->value = 0;
-			free(*stack);
-			*stack = tmp;
-		}
+		return ;
+	}
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->value = 0;
+		free(*stack);
+		*stack = tmp;
 	}
 }
+
+// void	ft_stackadd_back(t_stack **lst, t_stack *new)
+// {
+// 	t_stack	*tmp;
+
+// 	if (lst)
+// 	{
+// 		if (*lst == NULL)
+// 		{
+// 			*lst = new;
+// 		}
+// 		else
+// 		{
+// 			tmp = ft_lstlast(*(lst));
+// 			tmp->next = new;
+// 		}
+// 	}
+// }
+

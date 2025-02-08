@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:16:54 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:29:01 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ int	check_sorted(t_stack *stack)
 	return (ft_printf("Stack already sorted\n"), 1);
 }
 
-void	sorting(t_stack **a)
-{
-	t_stack	*b;
-	int		i;
+// void	sorting(t_stack **a)
+// {
+// 	t_stack	*b;
+// 	int		i;
 
-	b = NULL;
-	if (ft_lstsize(*a) == 2)
-	else if (ft_lstsize(*a) == 3)
-	else if (ft_lstsize(*a) <= 5)
-	else if (ft_lstsize(*a) > 5)
+// 	b = NULL;
+// 	if (ft_lstsize(*a) == 2)
+// 	else if (ft_lstsize(*a) == 3)
+// 	else if (ft_lstsize(*a) <= 5)
+// 	else if (ft_lstsize(*a) > 5)
 
-}
+// }
 
 t_stack	*copy_a(t_stack *a)
 {
@@ -47,15 +47,15 @@ t_stack	*copy_a(t_stack *a)
 
 	tmpa = malloc(sizeof(t_stack));
 	if (!tmpa)
-		return (free_stack(tmpa), NULL);
-	tmpa->data = a->data;
+		return (free_stack(&tmpa), NULL);
+	tmpa->value = a->value;
 	ptr = tmpa;
 	a = a->next;
 	while (a != NULL)
 	{
 		ptr->next = malloc(sizeof(t_stack));
 		if (!ptr)
-			return (free_stack(tmpa), NULL);
+			return (free_stack(&tmpa), NULL);
 		ptr = ptr->next;
 		ptr->value = a->value;
 		a = a->next;

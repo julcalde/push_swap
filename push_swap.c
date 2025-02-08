@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:18:18 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:00:04 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 	t_stack	*tmpa;
 
 	tmpa = NULL;
@@ -27,10 +27,10 @@ int	main(int argc, char **argv)
 	}
 	if (!check_sorted(a))
 	{
-		tmpa = copy_sort(a);
+		tmpa = copy_a(a);
 		tmpa = sort_copy(tmpa);
 		a = indexing(a, tmpa);
-		sorting(&a, &b);
+		sorting(&a);
 	}
 	free_stack(&a);
 	return (0);

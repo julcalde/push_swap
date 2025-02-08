@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:49:34 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:51:27 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:29:36 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	rev_rotate(t_stack **stack)
 int	rev_rotate_both(t_stack **a, t_stack **b)
 {
 	rev_rotate(a);
-	rev_rotate(a);
+	rev_rotate(b);
 	write (1, "rrr\n", 4);
 	return (0);
 }

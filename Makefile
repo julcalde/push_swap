@@ -25,7 +25,7 @@ NC = \033[0m
 CLEAR_LINE = \033[2K\r
 
 SRCS =			push_swap.c split_args.c utility_ft0.c i_see_double.c \
-				commands.c commands1.c commands2.c sorting.c
+				sorting.c push.c swap.c rotate.c rev_rotate.c
 
 # Object files
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
