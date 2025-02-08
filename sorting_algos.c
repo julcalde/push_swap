@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 20:53:46 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 21:17:47 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:24:08 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_5(t_stack **a, t_stack **b)
 		else
 			rotate_a(a);
 	}
-	sort_e(a);
+	sort_3(a);
 	push_a(a, b);
 	if ((*a)->value == 4 && (*b) != NULL)
 	{
@@ -61,5 +61,34 @@ void	sort_5(t_stack **a, t_stack **b)
 		push_a(a, b);
 		rotate_a(a);
 		rotate_a(a);
+	}
+}
+
+void	sayan_radish_sort(t_stack **a, t_stack **b)
+{
+	int	stack_index;
+	int	great_repbit;
+	int	i;
+	int	j;
+
+	stack_index = ft_stacksize(*a);
+	great_repbit = 0;
+	while ((stack_index >> great_repbit) != 0)
+		great_repbit++;
+	i = 0;
+	while (i < great_repbit)
+	{
+		j = 0;
+		while (j < stack_index)
+		{
+			if ((((*a)->value >> i) & 1) == 1)
+				rotate_a(a);
+			else
+				push_b(a, b);
+			j++;
+		}
+		while ((*b) != NULL)
+			push_a(a, b);
+		i++;
 	}
 }

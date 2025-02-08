@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 22:04:34 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:55:42 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:52:29 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,6 @@ void	free_str(char **lst)
 	*lst = NULL;
 }
 
-// t_stack	*create_numnode(int num)
-// {
-// 	t_stack	*new;
-
-// 	new = malloc(sizeof(t_stack));
-// 	if (!new)
-// 		perror_msg("Failed to allocate memory for new node");
-// 	new->value = num;
-// 	new->next = NULL;
-// 	return (new);
-}
-
 t_stack	*split_args(char **argv)
 {
 	t_stack	*a;
@@ -46,13 +34,13 @@ t_stack	*split_args(char **argv)
 	char	**tmp;
 	int		i;
 
-	a = malloc(sizeof(t_stack));
-	tmpa = a;
+	tmpa = malloc(sizeof(t_stack));
+	a = tmpa;
 	i = 0;
 	tmp = ft_split(argv[1], ' ');
 	while (tmp[i])
 	{
-		tmpa->value = ft_stol(argv[i]);
+		tmpa->value = ft_stol(tmp[i]);
 		tmpa = tmpa->next;
 		i++;
 		if (tmp[i])

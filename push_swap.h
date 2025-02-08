@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:55:58 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:18:44 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,10 @@ t_stack		*copy_a(t_stack *a);
 t_stack		*sort_copy(t_stack *tmpa);
 t_stack		*indexing(t_stack *st1, t_stack *st2);
 void		sorting(t_stack **a);
+
+// sorting_algos.c
+void		sort_3(t_stack **a);
+void		sort_5(t_stack **a, t_stack **b);
+void		sayan_radish_sort(t_stack **a, t_stack **b);
 
 #endif

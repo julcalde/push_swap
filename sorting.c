@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:52:31 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:33:27 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 int	check_sorted(t_stack *stack)
 {
-	int	i;
-
-	i = stack->value;
-	while (stack)
+	while (stack->next)
 	{
-		if (i > stack->value)
+		if (stack->value > stack->next->value)
 			return (0);
-		i = stack->value;
 		stack = stack->next;
 	}
 	return (ft_printf("Stack already sorted\n"), 1);
@@ -112,7 +108,7 @@ void	sorting(t_stack **a)
 	else if (ft_stacksize(*a) == 3)
 		sort_3(a);
 	else if (ft_stacksize(*a) <= 5)
-		sort_5(a, b);
+		sort_5(a, &b);
 	else if (ft_stacksize(*a) > 5)
-		sayajin_sort(a, b);
+		sayan_radish_sort(a, &b);
 }
