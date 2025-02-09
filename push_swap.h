@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 22:18:44 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:49:16 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
 typedef struct s_stack
 {
 	int				value;
-	// int				index;
-	// int				pos;
-	// int				target_pos;
-	// int				cost_a;
-	// int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -52,13 +47,12 @@ int			rev_rotate(t_stack **stack);
 int			rev_rotate_both(t_stack **a, t_stack **b);
 
 // split_args.c
+void		free_str(char **str);
 t_stack		*check_args(int argc, char **argv);
 t_stack		*split_args(char **argv);
-// t_stack		*create_numnode(int num);
-void		free_str(char **lst);
 
 // utility_ft0.c
-int			ft_stol(const char *str);
+long		ft_stol(const char *str);
 void		perror_msg(char *str);
 void		free_stack(t_stack **stack);
 int			ft_stacksize(t_stack *stack);
@@ -77,5 +71,10 @@ void		sorting(t_stack **a);
 void		sort_3(t_stack **a);
 void		sort_5(t_stack **a, t_stack **b);
 void		sayan_radish_sort(t_stack **a, t_stack **b);
+
+// t_stack_funcs.c
+void		ft_stackadd_back(t_stack **stack, t_stack *new);
+t_stack		*ft_stacklast(t_stack *stack);
+t_stack		*ft_stacknew(int *value);
 
 #endif

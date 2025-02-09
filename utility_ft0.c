@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 20:42:14 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:54:13 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	perror_msg(char *str)
 	exit(1);
 }
 
-int	ft_stol(const char *str)
+long	ft_stol(const char *str)
 {
 	int				sig;
 	long long int	i;
@@ -39,11 +39,11 @@ int	ft_stol(const char *str)
 	{
 		if (!ft_isdigit(*str))
 			perror_msg("Please use digits only.\n");
-		i = i * 10 + (*str - 48);
+		i = i * 10 + (*str - '0');
 		str++;
 	}
 	if ((sig * i > 2147483647) || (sig * i < -2147483648))
-		perror_msg("Numbers allowed only between -2147483648 and 2147483647");
+		perror_msg("Used numbers out of range");
 	return (sig * i);
 }
 
@@ -51,16 +51,11 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if (!stack)
-	{
-		return ;
-	}
 	while (*stack)
 	{
-		tmp = (*stack)->next;
-		(*stack)->value = 0;
-		free(*stack);
-		*stack = tmp;
+		tmp = *stack;
+		stack = (*stack)->next;
+		free(tmp);
 	}
 }
 
