@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 16:00:39 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:32:40 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_stack		*split_args(char **argv);
 
 // utility_ft0.c
 long		ft_stol(const char *str);
-void		perror_msg(char *str);
+void		perror_msg(void);
 void		free_stack(t_stack **stack);
 int			ft_stacksize(t_stack *stack);
 

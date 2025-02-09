@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 22:04:34 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 17:28:43 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:38:48 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_stack	*check_args(int argc, char **argv)
 
 	a = NULL;
 	if (argc < 2)
-		perror_msg("Enter at least one argument.\n");
+		return (0);
 	if (argc == 2)
 		a = split_args(argv);
 	else

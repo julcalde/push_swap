@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:41:47 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 17:17:31 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:34:27 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*ft_stacknew(int value)
 	stack = (t_stack *)malloc(sizeof(*stack));
 	if (!stack)
 	{
-		perror_msg("malloc failed 02");
+		perror_msg();
 	}
 	stack->value = value;
 	stack->next = NULL;

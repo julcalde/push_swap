@@ -6,21 +6,11 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 18:17:26 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:40:24 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack *a)
-{
-	ft_printf("stack size: %d\n", ft_stacksize(a));
-	while (a)
-	{
-		ft_printf("%d\n", a->value);
-		a = a->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -29,10 +19,12 @@ int	main(int argc, char **argv)
 
 	tmpa = NULL;
 	a = check_args(argc, argv);
-	if (!a || check_dupes(a))
+	if (!a)
+		return (0);
+	if (check_dupes(a))
 	{
 		free_stack(&a);
-		perror_msg("Duplicates not allowed\n");
+		perror_msg();
 	}
 	if (ft_stacksize(a) == 2 && (a->value > a->next->value))
 		return (swap_a(a), 0);
@@ -43,6 +35,5 @@ int	main(int argc, char **argv)
 		a = indexing(tmpa, a);
 		sorting(&a);
 	}
-	free_stack(&tmpa);
-	return (0);
+	return (free_stack(&tmpa), 0);
 }
