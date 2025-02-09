@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:25:07 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 15:54:13 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:03:20 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	free_stack(t_stack **stack)
 	while (*stack)
 	{
 		tmp = *stack;
-		stack = (*stack)->next;
+		*stack = (*stack)->next;
 		free(tmp);
 	}
 }

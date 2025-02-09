@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:35 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 15:49:16 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:00:39 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void		sayan_radish_sort(t_stack **a, t_stack **b);
 // t_stack_funcs.c
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
 t_stack		*ft_stacklast(t_stack *stack);
-t_stack		*ft_stacknew(int *value);
+t_stack		*ft_stacknew(int value);
 
 #endif

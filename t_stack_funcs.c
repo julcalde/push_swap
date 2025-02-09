@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:41:47 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 15:48:56 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 17:17:31 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_stack	*ft_stacklast(t_stack *stack)
 	return (stack);
 }
 
-t_stack	*ft_stacknew(int *value)
+t_stack	*ft_stacknew(int value)
 {
 	t_stack	*stack;
 

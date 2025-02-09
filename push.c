@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:35:37 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/08 19:44:59 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 17:10:56 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	push_a(t_stack **a, t_stack **b)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
-	if (!*b)
+	if (*b != NULL)
 	{
 		tmp1 = *b;
 		tmp2 = *a;
@@ -34,7 +34,7 @@ int	push_b(t_stack **a, t_stack **b)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
-	if (!*a)
+	if (*a != NULL)
 	{
 		tmp1 = *a;
 		tmp2 = *b;
