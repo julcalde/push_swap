@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 20:53:46 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 17:11:10 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 17:49:57 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 void	sort_3(t_stack **a)
 {
-	if (((*a)->value == 2) && ((*a)->next->value == 1) \
-		&& ((*a)->next->next->value == 3))
+	if (((*a)->value == 2) && ((*a)->next->value == 1))
 		swap_a(*a);
-	else if (((*a)->value == 2) && ((*a)->next->value == 3) \
-		&& ((*a)->next->next->value == 1))
+	else if (((*a)->value == 2) && ((*a)->next->value == 3))
 		rev_rotate_a(a);
-	else if (((*a)->value == 3) && ((*a)->next->value == 2) \
-		&& ((*a)->next->next->value == 1))
+	else if (((*a)->value == 3) && ((*a)->next->value == 2))
 	{
 		swap_a(*a);
 		rev_rotate_a(a);
 	}
-	else if (((*a)->value == 3) && ((*a)->next->value == 1) \
-		&& ((*a)->next->next->value == 2))
-		rotate_a(a);
-	else if (((*a)->value == 1) && ((*a)->next->value == 3) \
-		&& ((*a)->next->next->value == 2))
+	else if (((*a)->value == 3) && ((*a)->next->value == 1))
+		ft_printf("ra\n");
+	else if (((*a)->value == 1) && ((*a)->next->value == 3))
 	{
 		swap_a(*a);
 		rotate_a(a);

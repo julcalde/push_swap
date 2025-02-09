@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 18:15:38 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 17:29:12 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:17:26 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ int	main(int argc, char **argv)
 		free_stack(&a);
 		perror_msg("Duplicates not allowed\n");
 	}
+	if (ft_stacksize(a) == 2 && (a->value > a->next->value))
+		return (swap_a(a), 0);
 	if (!check_sorted(a))
 	{
 		tmpa = copy_a(a);
 		tmpa = sort_copy(tmpa);
-		a = indexing(a, tmpa);
+		a = indexing(tmpa, a);
 		sorting(&a);
 	}
 	free_stack(&tmpa);

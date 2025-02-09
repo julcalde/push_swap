@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:20:57 by julcalde          #+#    #+#             */
-/*   Updated: 2025/02/09 16:21:37 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:12:33 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,12 @@ t_stack	*copy_a(t_stack *a)
 	t_stack	*ptr;
 
 	tmpa = malloc(sizeof(t_stack));
-	if (!tmpa)
-		return (free_stack(&tmpa), NULL);
 	tmpa->value = a->value;
 	ptr = tmpa;
 	a = a->next;
 	while (a != NULL)
 	{
 		ptr->next = malloc(sizeof(t_stack));
-		if (!ptr)
-			return (free_stack(&tmpa), NULL);
 		ptr = ptr->next;
 		ptr->value = a->value;
 		a = a->next;
